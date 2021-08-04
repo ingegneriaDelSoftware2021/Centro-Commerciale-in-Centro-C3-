@@ -1,0 +1,48 @@
+it/unicam/cs/ids/c3/model/Clienti/Carrello.java
+ it.unicam.cs.ids.c3.model.Clienti.Carrello
+it/unicam/cs/ids/c3/model/Lockers/Locker.java
+ it.unicam.cs.ids.c3.model.Lockers.Locker
+it/unicam/cs/ids/c3/model/CorriereInterface.java
+ it.unicam.cs.ids.c3.model.CorriereInterface
+it/unicam/cs/ids/c3/model/Lockers/LockerInterface.java
+ it.unicam.cs.ids.c3.model.Lockers.LockerInterface
+it/unicam/cs/ids/c3/model/Ordini/Ordine.java
+ it.unicam.cs.ids.c3.model.Ordini.Ordine
+it/unicam/cs/ids/c3/model/Corriere/Corriere.java
+ it.unicam.cs.ids.c3.model.Corriere.Corriere
+it/unicam/cs/ids/c3/model/Utente/Utente.java
+ it.unicam.cs.ids.c3.model.Utente.Utente
+it/unicam/cs/ids/c3/model/Clienti/ListaClienti.java
+ it.unicam.cs.ids.c3.model.Clienti.ListaClienti
+it/unicam/cs/ids/c3/model/Ordini/StatoOrdine.java
+ it.unicam.cs.ids.c3.model.Ordini.StatoOrdine
+it/unicam/cs/ids/c3/model/Ordini/ListaOrdini.java
+ it.unicam.cs.ids.c3.model.Ordini.ListaOrdini
+it/unicam/cs/ids/c3/model/Lockers/Armadietto.java
+ it.unicam.cs.ids.c3.model.Lockers.Armadietto
+it/unicam/cs/ids/c3/model/Corriere/ListaCorrieri.java
+ it.unicam.cs.ids.c3.model.Corriere.ListaCorrieri
+it/unicam/cs/ids/c3/model/Esercente/Prodotto.java
+ it.unicam.cs.ids.c3.model.Esercente.Prodotto
+it/unicam/cs/ids/c3/model/Lockers/ListaLockers.java
+ it.unicam.cs.ids.c3.model.Lockers.ListaLockers
+it/unicam/cs/ids/c3/model/Pagamento/Pagamento.java
+ it.unicam.cs.ids.c3.model.Pagamento.Pagamento
+it/unicam/cs/ids/c3/model/Clienti/ClienteInterface.java
+ it.unicam.cs.ids.c3.model.Clienti.ClienteInterface
+it/unicam/cs/ids/c3/model/Pagamento/PagamentoInterface.java
+ it.unicam.cs.ids.c3.model.Pagamento.PagamentoInterface
+it/unicam/cs/ids/c3/model/Esercente/Promozioni.java
+ it.unicam.cs.ids.c3.model.Esercente.Promozioni
+it/unicam/cs/ids/c3/model/Esercente/Commerciante.java
+ it.unicam.cs.ids.c3.model.Esercente.Commerciante
+it/unicam/cs/ids/c3/model/Clienti/Cliente.java
+ it.unicam.cs.ids.c3.model.Clienti.Cliente
+it/unicam/cs/ids/c3/model/Esercente/ListaNegozi.java
+ it.unicam.cs.ids.c3.model.Esercente.ListaNegozi
+it/unicam/cs/ids/c3/model/CommercianteInterface.java
+ it.unicam.cs.ids.c3.model.CommercianteInterface
+it/unicam/cs/ids/c3/model/Esercente/Negozio.java
+ it.unicam.cs.ids.c3.model.Esercente.Negozio
+it/unicam/cs/ids/c3/App.java
+ it.unicam.cs.ids.c3.App
