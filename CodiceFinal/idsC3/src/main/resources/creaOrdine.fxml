@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: e8b96d;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicam.cs.ids.c3.model.Vista.commerciante.CreaOrdineController">
+   <children>
+      <ListView fx:id="prodottiOrdineListView" layoutX="41.0" layoutY="100.0" prefHeight="200.0" prefWidth="267.0" />
+      <Label layoutX="40.0" layoutY="64.0" prefHeight="18.0" prefWidth="267.0" style="-fx-background-color: #6be8ce;" text="lista dei prodotti dell'ordine selezionato" />
+      <ComboBox fx:id="ordiniComboBox" layoutX="14.0" layoutY="329.0" prefHeight="27.0" prefWidth="241.0" promptText="scegli un ordine da creare...." />
+      <Button layoutX="350.0" layoutY="252.0" mnemonicParsing="false" onAction="#creaOrdineButton" prefHeight="30.0" prefWidth="218.0" text="crea ordine!" />
+      <ComboBox fx:id="scegliDestinazioneComboBox" layoutX="343.0" layoutY="100.0" prefHeight="27.0" prefWidth="225.0" promptText="scegli il tipo di destinazione..." style="-fx-background-color: #6be8ce;" />
+      <ComboBox fx:id="scegliCorriereComboBox" layoutX="343.0" layoutY="163.0" prefHeight="27.0" prefWidth="225.0" promptText="scegli un corriere..." style="-fx-background-color: #6be8ce;" />
+      <Button layoutX="281.0" layoutY="327.0" mnemonicParsing="false" onAction="#cercaPressed" text="cerca" />
+      <Label fx:id="indirizzoLabel" layoutX="380.0" layoutY="65.0" prefHeight="18.0" prefWidth="218.0" style="-fx-background-color: #6be8ce;" />
+      <Label layoutX="329.0" layoutY="65.0" style="-fx-background-color: #6be8ce;" text="Indirizzo:" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,12 @@
+it/unicam/cs/ids/c3/clienteTest.java
+ it.unicam.cs.ids.c3.clienteTest
+it/unicam/cs/ids/c3/CommercianteTest.java
+ it.unicam.cs.ids.c3.CommercianteTest
+it/unicam/cs/ids/c3/LockerTest.java
+ it.unicam.cs.ids.c3.LockerTest
+it/unicam/cs/ids/c3/AppTest.java
+ it.unicam.cs.ids.c3.AppTest
+it/unicam/cs/ids/c3/LoginTest.java
+ it.unicam.cs.ids.c3.LoginTest
+it/unicam/cs/ids/c3/DBTest.java
+ it.unicam.cs.ids.c3.DBTest

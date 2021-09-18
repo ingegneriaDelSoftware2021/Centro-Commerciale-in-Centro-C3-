@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #e8b96d;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicam.cs.ids.c3.model.Vista.locker.RitiraPaccoLocker">
+   <children>
+      <Label layoutX="108.0" layoutY="107.0" style="-fx-background-color: #6be8ce;" text="inserisci id dell'ordine" />
+      <TextField fx:id="idOrdineTextField" layoutX="403.0" layoutY="103.0" promptText="inserisci id dell'ordine..." style="-fx-background-color: #6be8ce;" />
+      <Label layoutX="34.0" layoutY="191.0" style="-fx-background-color: #6be8ce;" text="seleziona un armadietto in cui inserire il pacco:" />
+      <ComboBox fx:id="armadiettiLiberiComboBox" layoutX="377.0" layoutY="187.0" prefHeight="27.0" prefWidth="205.0" promptText="seleziona un armadietto..." style="-fx-background-color: #6be8ce;" />
+      <Button layoutX="254.0" layoutY="290.0" mnemonicParsing="false" onAction="#aggiungiOrdinePressed" text="aggiungi l'ordine!" />
+   </children>
+</AnchorPane>
