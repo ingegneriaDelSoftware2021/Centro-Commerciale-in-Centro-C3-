@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #e8b96d;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicam.cs.ids.c3.model.Vista.corriere.vistaCorriereController">
+   <children>
+      <MenuBar layoutX="7.0" layoutY="2.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="azione">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#visualizzaOrdiniPressed" text="visualizza ordini" />
+                  <MenuItem mnemonicParsing="false" onAction="#logoutPressed" text="logout" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <AnchorPane layoutX="110.0" layoutY="69.0" prefHeight="263.0" prefWidth="380.0" style="-fx-background-color: #6be8ce;">
+         <children>
+            <Label layoutX="73.0" layoutY="48.0" text="nome " />
+            <Label layoutX="54.0" layoutY="104.0" text="disponibilita'" />
+            <Label fx:id="disponibilitaLabel" layoutX="240.0" layoutY="105.0" />
+            <Label fx:id="nomeLabel" layoutX="243.0" layoutY="49.0" />
+            <Button layoutX="120.0" layoutY="186.0" mnemonicParsing="false" onAction="#cambiaDisponibilitaPressed" text="cambia disponobilita'" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: e8b96d;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicam.cs.ids.c3.model.Vista.cliente.OrdiniCheckController">
+   <children>
+      <TableView fx:id="tabellaOrdini" layoutX="76.0" layoutY="22.0" prefHeight="346.0" prefWidth="417.0" style="-fx-background-color: #6be8ce;">
+         <columns>
+            <TableColumn fx:id="IDOrdine" prefWidth="75.0" text="ID ordine" />
+            <TableColumn fx:id="statoOrdine" prefWidth="114.0" text="Stato Ordine" />
+            <TableColumn fx:id="prodotti" prefWidth="227.0" text="Carrello" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: e8b96d;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicam.cs.ids.c3.model.Vista.commerciante.commercianteController">
+   <children>
+      <MenuBar layoutY="2.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="azione">
+            <items>
+                  <MenuItem fx:id="creaOrdineMenuItem" mnemonicParsing="false" onAction="#creaOrdinePressed" text="crea ordine" />
+                  <MenuItem fx:id="gestisciPromozioniMenuItem" mnemonicParsing="false" onAction="#gestisciPromozioni" text="gestisci promozioni" />
+                  <MenuItem fx:id="statisticheNegozioMenuItem" mnemonicParsing="false" onAction="#statisticheNegozioPressed" text="statistiche negozio" />
+                  <MenuItem fx:id="visualizzaNegoziMenuItem" mnemonicParsing="false" onAction="#visualizzaNegoziPressed" text="visualizza negozi" />
+                  <MenuItem mnemonicParsing="false" onAction="#logoutPressed" text="logout" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <AnchorPane layoutX="92.0" layoutY="100.0" prefHeight="200.0" prefWidth="438.0" style="-fx-background-color: #6be8ce;">
+         <children>
+            <Label layoutX="79.0" layoutY="44.0" text="nome " />
+            <Label layoutX="47.0" layoutY="124.0" text="saldo portafoglio" />
+            <Label fx:id="nomeLabel" layoutX="278.0" layoutY="45.0" />
+            <Label fx:id="portafoglioLabel" layoutX="278.0" layoutY="124.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
