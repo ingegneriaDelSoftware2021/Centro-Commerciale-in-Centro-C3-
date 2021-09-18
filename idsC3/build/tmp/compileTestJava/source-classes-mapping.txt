@@ -1,6 +1,0 @@
-it/unicam/cs/ids/c3/AppTest.java
- it.unicam.cs.ids.c3.AppTest
-it/unicam/cs/ids/c3/CommercianteTest.java
- it.unicam.cs.ids.c3.CommercianteTest
-it/unicam/cs/ids/c3/DBTest.java
- it.unicam.cs.ids.c3.DBTest
