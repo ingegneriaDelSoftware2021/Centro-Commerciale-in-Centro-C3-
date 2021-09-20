@@ -73,15 +73,7 @@ public class CercaProdottoController{
         if(!this.quantitaTextField.getText().chars().allMatch(Character::isDigit)) inputNonInseritoCorrettamente("il carattere inserito non e' un numero");
         else{
             Prodotto z = this.prodottoList.stream().filter(x -> x.getNome().contains(s)).findFirst().orElse(null);
-            if(z==null)System.out.println("nooooo p e' null");
-            try{
-                this.prodottoList.stream().filter(x -> x.getNome().contains(s)).
-                        findFirst().
-                        ifPresent(p -> this.cliente.aggiungiProdottoAlCarrello(p, Integer.parseInt(quantitaTextField.getText())));
-            }catch (IllegalArgumentException exception){
-                inputNonInseritoCorrettamente("i prodotti inseriti nel carrello devono essere dello statesso negozio!");
-            }
-
+            if(z!=null) cliente.aggiungiProdottoAlCarrello(z,Integer.parseInt(quantitaTextField.getText()));
         }
     }
 

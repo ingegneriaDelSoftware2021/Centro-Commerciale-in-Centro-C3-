@@ -65,7 +65,6 @@ public class GestisciCarrelloController implements Initializable {
 
     public void setCliente(ClienteInterface cliente) {
         this.cliente = cliente;
-        System.out.println(cliente==null);
         if(Objects.requireNonNull(cliente).getCarrello()!=null)addProdottiToTable(cliente.getCarrello());
     }
 
@@ -77,7 +76,6 @@ public class GestisciCarrelloController implements Initializable {
                 l = FXCollections.observableArrayList();
                 long q = carrello.getQuantitaProdotto(p);
                 l.add(p.getNome());
-                System.out.println(p.getNome()+" nome del prodotto che sto aggiungendo");
                 this.carrelloList.getItems().add(l.get(0));
                 l = FXCollections.observableArrayList();
                 l.add(String.valueOf(q));

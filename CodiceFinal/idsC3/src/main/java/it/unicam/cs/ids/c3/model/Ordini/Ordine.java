@@ -21,10 +21,10 @@ public class Ordine implements OrdineInterface{
 
     private  int IDOrdine;
 
-    private int IDCorriere;
+    private final int IDCorriere;
 
     private List<Prodotto> listaProdotti;
-    private int IDCommerciante;
+    private final int IDCommerciante;
     private final int IDNegozio;
     private int IDLocker;
 
@@ -48,13 +48,12 @@ public class Ordine implements OrdineInterface{
         this.IDCommerciante = ListaOrdini.getInstance().getIDCommercianteFromIDOrdine(this.IDOrdine);
         this.IDLocker = 0;
         this.IDNegozio = idnegozio;
-        System.out.println("costruttore senza consegna");
     }
 
 
 
     /**
-     * costruttore compketo dell'ordine
+     * costruttore completo dell'ordine
      * @param idOrdine id dell'ordine
      * @param idCorriere id del corriere
      * @param idCliente id del cliente
@@ -94,8 +93,9 @@ public class Ordine implements OrdineInterface{
 
 
     /**
-     *
-     * @param prodotti
+     * Questo costruttore viene richiamato nel momento in cui l'ordine viene creato.
+     * @param prodotti la lista di prodotti presenti nell'ordine.
+     * @param IDCliente id del cliente che ha effettuato l'ordine.
      */
     public Ordine(List<Prodotto> prodotti, int IDCliente) throws ClassNotFoundException {
 
@@ -113,7 +113,8 @@ public class Ordine implements OrdineInterface{
 
     }
 
-    private void generaID() throws ClassNotFoundException {
+
+    private void generaID(){
         Random r = new Random();
         boolean check = false;
         while(!check){
@@ -186,12 +187,10 @@ public class Ordine implements OrdineInterface{
 
     }
 
+    @Override
     public void updateCounterProdotti(int idOrdine) {
         this.listaProdotti = ListaOrdini.getInstance().getOrdine(idOrdine).getListaProdotti();
-        //TODO aggiustare questo metodo che aumenta il counter di tutti i prodotti ma dovrebbe aumentarne solo di uno.
-           listaProdotti.forEach(x-> {
-               ListaOrdini.getInstance().updateCounterProdotto(x.getIDprodotto(),x.getCounterVendita());
-           });
+           listaProdotti.forEach(x-> ListaOrdini.getInstance().updateCounterProdotto(x.getIDprodotto(),x.getCounterVendita()));
     }
 
     @Override

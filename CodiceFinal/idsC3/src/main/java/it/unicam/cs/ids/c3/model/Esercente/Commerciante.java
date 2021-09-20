@@ -6,7 +6,6 @@ import it.unicam.cs.ids.c3.model.Corriere.ListaCorrieri;
 
 import it.unicam.cs.ids.c3.model.Ordini.ListaOrdini;
 import it.unicam.cs.ids.c3.model.Ordini.Ordine;
-import it.unicam.cs.ids.c3.model.Ordini.StatoOrdine;
 import it.unicam.cs.ids.c3.model.Utente.Utente;
 import java.util.*;
 
@@ -34,7 +33,7 @@ public class Commerciante extends Utente implements CommercianteInterface {
         super();
         setNome(nome);
         setUtente(user);
-        this.portafoglio = 0;
+        this.portafoglio = ListaCommercianti.getInstance().getPortafoglioFromID(IDCommerciante);
         this.IDCommerciante = IDCommerciante;
         negozi = ListaNegozi.getInstance().getNegozi(IDCommerciante);
 
@@ -61,7 +60,7 @@ public class Commerciante extends Utente implements CommercianteInterface {
 
     private int generaID() throws ClassNotFoundException {
             Random r = new Random();
-            int rit = 0;
+            int rit;
             while(true){
                 boolean app = false;
                 rit = Math.abs(r.nextInt());
@@ -138,7 +137,8 @@ public class Commerciante extends Utente implements CommercianteInterface {
 
     @Override
     public float getSoldiPortafoglio() {
-        return ListaCommercianti.getInstance().getPortafoglioFromID(this.IDCommerciante);
+        return this.portafoglio;
+        //return ListaCommercianti.getInstance().getPortafoglioFromID(this.IDCommerciante);
     }
 
     @Override
@@ -152,8 +152,6 @@ public class Commerciante extends Utente implements CommercianteInterface {
     @Override
     public boolean riceviPagamento(int idCliente, float importo, List<Prodotto> prodotti) {
         if(importo<0)return false;
-        System.out.println(importo+" importo dentro commerciante.riceviPagamento");
-        System.out.println(this.IDCommerciante+" idcommerciante dentro commerciante.ricevipagamento");
         ListaCommercianti.getInstance().aggiungiDenaro(this.IDCommerciante, importo);
         this.portafoglio+=importo;
         creaOrdine(idCliente, prodotti);

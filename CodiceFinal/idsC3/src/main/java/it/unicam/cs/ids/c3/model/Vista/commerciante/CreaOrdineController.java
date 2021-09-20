@@ -158,7 +158,6 @@ public class CreaOrdineController implements Initializable {
         List<OrdineInterface> l = ListaOrdini.getInstance().getOrdini().stream().filter(x->x.getIDCommerciante()==commerciante.getIDCommerciante() && x.getStatoOrdine().equals(StatoOrdine.ORDINECREATO)).collect(Collectors.toList());
         this.listaOrdini = l;
         for(OrdineInterface o : l){
-            System.out.println(o.getIDOrdine()+" idordine dentro creaordinecontroller");
             this.ordiniComboBox.getItems().add(o.getIDOrdine());
         }
 

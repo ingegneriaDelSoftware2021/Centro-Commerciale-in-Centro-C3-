@@ -3,7 +3,8 @@ package it.unicam.cs.ids.c3.model.Lockers;
 import it.unicam.cs.ids.c3.model.Ordini.OrdineInterface;
 
 /**
- *
+ * Questa classe rappresenta un'armadietto di un locker.Un locker &egrave; formato
+ * da pi&ugrave; armadietti. Un Armadietto pu&ograve; contenere un ordine.
  * @author Davide Menghini, Francesco Allevi.
  */
 public class Armadietto {

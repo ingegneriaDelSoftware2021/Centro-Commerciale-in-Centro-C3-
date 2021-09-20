@@ -28,6 +28,10 @@ public  class ListaLockers {
 
     }
 
+    /**
+     * Questo metodo restituisce l'istanza della lista di lockers.
+     * @return istanza di ListaLockers.
+     */
     public static ListaLockers getInstance() {
         return new ListaLockers();
     }
@@ -38,7 +42,7 @@ public  class ListaLockers {
      * @return una lista di tutti i locker.
      */
     public List<LockerInterface> getLockers(){
-        return db.getAllLockers();
+        return this.lockers;
     }
 
     /**
@@ -70,10 +74,19 @@ public  class ListaLockers {
         }
     }
 
+    /**
+     * Questo metodo permette di restituire l'istanza del locker partendo dall'username.
+     * @param user username usato per accedere alla piattaforma.
+     * @return istanza del locker che ha come username la stringa passata.
+     */
     public LockerInterface getLockerFromUser(String user) {
         return db.getAllLockers().stream().filter(x-> x.getUser().equals(user)).findFirst().orElse(null);
     }
 
+    /**
+     * Questo metodo serve per rimuovere un'ordine dall'armadietto.
+     * @param idOrdine id dell'ordine da ritirare.
+     */
     public void rimuoviOrdineFromArmadietto(int idOrdine) {
         db.deleteOrdineFromArmadietto(idOrdine);
     }

@@ -65,7 +65,7 @@ public class ListaCommercianti {
 
     /**
      * Questo metodo imposta lo stato dell'ordine come ("in preparazione")
-     * @param idOrdine id dell'ordine a cui aggiornare l'ordine
+     * @param idOrdine id dell'ordine a cui aggiornare lo stato
      */
     public void aggiornaStatoOrdine(int idOrdine) {
         db.aggiornaStatoOrdine(idOrdine, StatoOrdine.INPREPARAZIONE);
@@ -89,11 +89,20 @@ public class ListaCommercianti {
         return db.getPortaglioFromIDComm(idCommerciante);
     }
 
+    /**
+     * Questo metodo ritorna il commerciante gato all'user
+     * @param user
+     * @return commerciante
+     */
     public CommercianteInterface getCommercianteFromUser(String user) {
         this.listaCommercianti = db.getAllCommercianti();
         return this.listaCommercianti.stream().filter(x->x.getUser().equals(user)).findFirst().orElse(null);
     }
 
+    /**
+     * Questo metodo ritorna tutte le promozioni del negozio
+     * @return lista di promozioni
+     */
     public List<Promozioni> getAllPromozioniFromNegozio() {
         return db.getAllPromozioni();
     }

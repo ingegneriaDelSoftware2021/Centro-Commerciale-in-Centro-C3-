@@ -33,23 +33,9 @@ public class ListaCorrieri {
         return this.corrieri;
     }
 
-    /**
-     * Questo metodo serve per aggiungere un nuovo corriere al database.
-     * @param corriere il corriere da aggiungere
-     */
-    public void addCorriere(Corriere corriere){
-        if(corriere==null) return;
-        this.corrieri.add(corriere);
-    }
 
-    /**
-     * Questo metodo serve per rimuovere il corriere dal database.
-     * @param IDCorriere id del corriere da rimuovere.
-     */
-    public void removeCorriere(int IDCorriere){
-        if(IDCorriere<0) return;
-        this.corrieri.removeIf(x -> x.getIDCorriere()==IDCorriere);
-    }
+
+
 
     /**
      * Questo metodo restituisce la lista di tutti i corrieri che in questo momento sono disponibili per effettuare una
@@ -70,6 +56,11 @@ public class ListaCorrieri {
         return instance;
     }
 
+    /**
+     * Questo metodo cambia lo stato di disponibilita' del corriere
+     * @param idCorriere id del corriere a cui cambiare lo stato
+     * @param nuovaDisponibilita disponibilita'
+     */
     public void cambiaDisponibilita(int idCorriere, boolean nuovaDisponibilita) {
         try {
             DBLocale.getInstance().updateDisponibilitaCorriere(idCorriere, nuovaDisponibilita);

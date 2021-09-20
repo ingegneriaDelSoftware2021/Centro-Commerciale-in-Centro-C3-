@@ -45,7 +45,8 @@ public class Cliente extends Utente implements ClienteInterface {
         setNome(nome);
         super.setIndirizzo(indirizzo);
         this.portafoglio = portafoglio;
-        this.carrello = ListaCarrello.getInstance().getCarrello(this.IDcliente);
+        this.carrello = ListaCarrello.getInstance().getCarrello(IDCarrello);
+
     }
 
 

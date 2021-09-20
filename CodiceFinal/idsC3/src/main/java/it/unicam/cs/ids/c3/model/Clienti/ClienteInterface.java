@@ -54,7 +54,7 @@ public interface ClienteInterface{
      * Questo metodo restituisce l'ID del cliente.
      * @return ID del cliente.
      */
-    public int getIDcliente();
+    int getIDcliente();
 
 
 

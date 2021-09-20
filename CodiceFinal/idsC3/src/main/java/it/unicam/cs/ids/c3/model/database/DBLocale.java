@@ -214,8 +214,9 @@ public class DBLocale {
      */
     public void addOrdine(Ordine ordine){
         try{
-
-            PreparedStatement query = connessione.prepareCall("INSERT into ordine(IDOrdine, IDCorriere,IDCliente," +
+            PreparedStatement query = connessione.prepareStatement("SET FOREIGN_KEY_CHECKS=0");
+            query.executeUpdate();
+            query = connessione.prepareCall("INSERT into ordine(IDOrdine, IDCorriere,IDCliente," +
                     "IDCommerciante,IDLocker,statoOrdine,indirizzo,IDNegozio) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
             query.setInt(1,ordine.getIDOrdine());
             query.setInt(2,ordine.getIDCorriere());
@@ -227,6 +228,8 @@ public class DBLocale {
             query.setInt(8,ordine.getIDNegozio());
             query.executeUpdate();
             updateOrdineProdotto(ordine.getListaProdotti(),ordine.getIDOrdine());
+            query = connessione.prepareStatement("SET FOREIGN_KEY_CHECKS=1");
+            query.executeUpdate();
         }catch (SQLException errore){
             errore.printStackTrace();
         }
@@ -322,28 +325,6 @@ public class DBLocale {
     }
 
 
-    /**
-     * Questo metodo aggiunge un nuovo prodotto al database
-     * @param prodotto prodotto da aggiungere
-     */
-    public void addProdotto(Prodotto prodotto){
-        try{
-            PreparedStatement query = connessione.prepareCall("INSERT INTO prodotto(IDProdotto,quantitaDisponibile,nome" +
-                    "descrizione,IDPromozione,categoria,prezzo)");
-            query.setInt(1,prodotto.getIDprodotto());
-            query.setInt(2,prodotto.getQuantita());
-            query.setString(3, prodotto.getNome());
-            query.setString(4, prodotto.getDescrizione());
-            query.setInt(5,prodotto.getPromozione());
-            query.setString(6,prodotto.getCategoria());
-            query.setFloat(7,prodotto.getPrezzo());
-            query.executeUpdate();
-        }catch (SQLException errore){
-            errore.printStackTrace();
-        }
-    }
-
-
 
     /**
      * Questo metodo aggiunge un nuovo cliente al database
@@ -372,8 +353,6 @@ public class DBLocale {
      */
     public void setIDLockerToOrdine(int IDLocker, int IDOrdine){
         try{
-            System.out.println(IDLocker+" idlocker dentro DBLocale.setIDLockerToOrdine");
-            System.out.println(IDOrdine+" idordine dentro DBLocale.setIDLockerToOrdine");
             PreparedStatement ps = connessione.prepareStatement("UPDATE ordine SET IDLocker =? WHERE IDOrdine =?");
             ps.setInt(1,IDLocker);
             ps.setInt(2,IDOrdine);
@@ -736,7 +715,7 @@ public class DBLocale {
     public void addPromozioneToProdotto(int sconto,boolean stato, int iDpromozione, int IDProdotto) {
         try{
 
-            System.out.println(stato+" stato della promozione che verra aggiunta");
+
             int app;
             PreparedStatement ps = connessione.prepareStatement("INSERT INTO promozione VALUES (?,?,?)");
             ps.setInt(1,iDpromozione);
@@ -770,7 +749,6 @@ public class DBLocale {
 
         try {
             PreparedStatement ps = connessione.prepareStatement("UPDATE prodotto SET IDPromozione = NULL where IDProdotto = ?");
-            System.out.println("id del prodotto "+idProdotto);
             ps.setInt(1,idProdotto);
             ps.executeUpdate();
         } catch (SQLException throwables) {
@@ -931,7 +909,7 @@ public class DBLocale {
             ps.setInt(1,idOrdine);
             ps.setInt(2,idarmadietto);
             ps.executeUpdate();
-            System.out.println("dentro DBLOCALE ho aggiunto l'id dell'ordine all'armadietto...");
+
         }catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -1014,7 +992,6 @@ public class DBLocale {
      * @param quantita la quantita che si vuole aggiungere.
      */
     public void addProdottoToCarrello(int idcarrello, Prodotto prodotto, int quantita) {
-        getAllCarrello().forEach(x->System.out.println(x.getIDCarrello()+ " id carrello dentro add prodotto to carrello"));
         Carrello c = getAllCarrello().stream().filter(z->z.getIDCarrello()==idcarrello).findFirst().orElse(null);
         if(Objects.requireNonNull(c).getProdotti().contains(prodotto))removeProdottoToCarrello(idcarrello, prodotto.getIDprodotto(), quantita);
         else{
@@ -1136,10 +1113,7 @@ public class DBLocale {
             ps.setInt(1,idcomm);
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
-                float app = rs.getFloat("portafoglio");
-                System.out.println(app+" old portafoglio dentro DBLocale.aggiungidenaro");
-                float newPort = app+totale;
-                System.out.println(newPort+" nuovo portafoglio dentro DBLocale.aggiungidenaro");
+                float newPort = rs.getFloat("portafoglio")+totale;
                 ps = connessione.prepareStatement("UPDATE commerciante SET portafoglio = ? WHERE IDCommerciante = ?");
                 ps.setFloat(1,newPort);
                 ps.setInt(2,idcomm);

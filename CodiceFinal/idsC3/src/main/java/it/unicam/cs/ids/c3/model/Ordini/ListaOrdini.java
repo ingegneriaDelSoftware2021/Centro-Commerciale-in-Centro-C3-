@@ -4,7 +4,6 @@ import it.unicam.cs.ids.c3.model.Esercente.ListaNegozi;
 import it.unicam.cs.ids.c3.model.Esercente.Negozio;
 import it.unicam.cs.ids.c3.model.Esercente.Prodotto;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -15,7 +14,6 @@ import java.util.stream.Collectors;
  */
 public class ListaOrdini {
     private List<OrdineInterface> ordini;
-    private static ListaOrdini instance;
     private DBLocale db;
 
 
@@ -32,9 +30,6 @@ public class ListaOrdini {
         ordini = o;
     }
 
-    public ListaOrdini(List<OrdineInterface> o) {
-        ordini = new ArrayList<>(o);
-    }
 
 
     /**
@@ -89,8 +84,7 @@ public class ListaOrdini {
      * @return istanza della classe
      */
     public static ListaOrdini getInstance(){
-        instance = new ListaOrdini();
-        return instance;
+        return new ListaOrdini();
     }
 
 
@@ -149,7 +143,9 @@ public class ListaOrdini {
      * @param idOrdine id dell'ordine al quale aggiungere l'id del locker di destinazione
      */
     public void setIDLockerToOrdine(int idLocker, int idOrdine) {
-        db.setIDLockerToOrdine(idLocker,idOrdine);
+
+        OrdineInterface o = db.getAllOrdini(idOrdine).get(0);
+        o.setIDLocker(idLocker);
     }
 
     /**
@@ -162,21 +158,33 @@ public class ListaOrdini {
     }
 
 
-
+    /**
+     * Questo metodo restituisce tutti gli ordini effettuati dal cliente.
+     * @param iDcliente id del cliente.
+     * @return una lista contenente tutti gli ordini del cliente.
+     */
     public List<OrdineInterface> getOrdiniFromCliente(int iDcliente) {
         if(this.ordini==null) this.ordini = db.getAllOrdini(0);
         return this.ordini.stream().filter(x->x.getIDCliente()==iDcliente).collect(Collectors.toList());
     }
 
+    /**
+     * Questo metodo restituisce tutti gli ordini effettuati dal cliente.
+     * @param IDOrdine id dell'ordine
+     * @return lista di prodotti contenuti nell'ordine.
+     */
     public List<Prodotto> getProdottiFromOrdine(int IDOrdine) {
         return db.getProdottoFromIDOrdine(IDOrdine);
     }
 
 
+    /**
+     * Questo metodo permette aggiornare lo stato dell'ordine.
+     * @param idOrdine id dell'ordine
+     * @param nuovoStato nuovo stato dell'ordine.
+     */
     public void updateStatoOrdine(int idOrdine,StatoOrdine nuovoStato){
-        if(nuovoStato.equals(StatoOrdine.DARITIRARE)){
-            db.aggiornaStatoOrdine(idOrdine, nuovoStato);
-        }else db.aggiornaStatoOrdine(idOrdine,nuovoStato);
+        db.aggiornaStatoOrdine(idOrdine, nuovoStato);
 
     }
 

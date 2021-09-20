@@ -17,7 +17,6 @@ public class JAVAFXmain extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/login.fxml"));
         primaryStage.setTitle("Centro Commerciale In Centro C3");
-        System.out.println(getClass().getResource("/login.fxml"));
         Parent root = FXMLLoader.load(getClass().getResource("/login.fxml"));
         primaryStage.setScene(new Scene(root,500,500));
         primaryStage.getIcons().add(new Image((getClass().getResource("/image.png")).toString()));

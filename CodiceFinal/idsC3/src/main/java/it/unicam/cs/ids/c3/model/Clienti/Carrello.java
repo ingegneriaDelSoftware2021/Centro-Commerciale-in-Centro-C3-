@@ -28,10 +28,8 @@ public class Carrello {
     public Carrello(int IDCliente, float totale) throws ClassNotFoundException {
         this.totale = totale;
         prodotti = ListaCarrello.getInstance().ListaProdotto(IDCliente);
-        if(prodotti==null) this.prodotti = new ArrayList<>();
         this.IDCarrello = IDCliente;
-        int idN = prodotti.parallelStream().map(x->x.getIDNegozio()).findFirst().orElse(0);
-
+        int idN = prodotti.parallelStream().map(Prodotto::getIDNegozio).findFirst().orElse(0);
         if(idN!=0)this.IDCommerciante = ListaCarrello.getInstance().getIDCommFromCarrID(idN);
         checkIfSaled();
     }
@@ -44,10 +42,10 @@ public class Carrello {
 
     /**
      * Costruttore carrello
-     * @param IDCLiente
-     * @param prodotti
-     * @param totale
-     * @param idCommerciante
+     * @param IDCLiente id del cliente che possiede il carrello.
+     * @param prodotti la lista contenente di prodotti presenti nel carrello.
+     * @param totale l'importo totale del carrello.
+     * @param idCommerciante id del commerciante.
      */
     public Carrello(int IDCLiente, List<Prodotto> prodotti, float totale, int idCommerciante){
         this.IDCarrello = IDCLiente;
@@ -74,7 +72,7 @@ public class Carrello {
      */
     public void aggiungiProdotto(Prodotto p, int quantita){
         if(p==null) return;
-        if(quantita<0) return;
+        if(quantita<0)return;
         for(int i=0; i<quantita;i++){
             this.prodotti.add(p);
         }
@@ -111,12 +109,12 @@ public class Carrello {
      * @return lista dei prodotti del carrello.
      */
     public List<Prodotto> getProdotti() {
-        return prodotti;
+        return ListaCarrello.getInstance().ListaProdotto(this.IDCarrello);
     }
 
     /**
      * getter idcommerciante
-     * @return
+     * @return id del commerciante.
      */
     public int getIDCommerciante() {
         return IDCommerciante;
@@ -124,21 +122,26 @@ public class Carrello {
 
     /**
      * getter idnegozio
-     * @return
-     * @throws ClassNotFoundException
+     * @return id del negozio di cui i prodotti del carrello fanno parte.
+     *
      */
-    public int getIDNegozio() throws ClassNotFoundException {
+    public int getIDNegozio() {
         return this.prodotti.stream().map(Prodotto::getIDNegozio).findFirst().orElse(0);
-
     }
 
 
-
+    /**
+     * Questo metodo restituisce la quantit&agrave; di un prodotto presente nel carrello.
+     * @param p prodotto da controllare la quantita.
+     * @return quantita del prodotto.
+     */
     public long getQuantitaProdotto(Prodotto p){
         return this.prodotti.stream().filter(x->x.getIDprodotto()==p.getIDprodotto()).count();
     }
 
-
+    /**
+     * Questo metodo svuota il carrello del cliente dopo aver creato l'ordine.
+     */
     public void svuotaCarrello(){
         Prodotto previous;
         Iterator<Prodotto> iterator = new ArrayList<>(prodotti).iterator();

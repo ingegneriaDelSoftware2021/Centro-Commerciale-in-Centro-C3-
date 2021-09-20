@@ -105,7 +105,6 @@ public class DBTest {
         Prodotto p = db.getAllProdotti().get(0);
         Carrello c = db.getAllCarrello().stream().filter(x->x.getIDCarrello()==1).findFirst().orElse(null);
         db.addProdottoToCarrello(1,p,(int)c.getQuantitaProdotto(p)+1);
-        System.out.println(ListaCarrello.getInstance().getCarrello(1).getProdotti().size()+ " size carrello old");
         int oldQuantita = (int) db.getAllCarrello().stream().filter(x->x.getIDCarrello()==1).findFirst().orElse(null).getQuantitaProdotto(p);
         List<Prodotto> list = db.getProdottiFromCarrello(1);
         assertEquals(oldListSize+1,list.size());
@@ -116,22 +115,18 @@ public class DBTest {
     @Test
     public void cercaProdottoFromNegozioTest(){
         ClienteInterface c = new Cliente(2,"alessandro","mimmo", 2,68.3f,"topolino");
-        List<Prodotto> actual = c.cercaProdotto("tostapane", 5);
+        List<Prodotto> actual = c.cercaProdotto("o", 5);
         checkProdottoNegozio(actual);
     }
 
     private void checkProdottoNegozio(List<Prodotto> actual) {
-        assertEquals(1,actual.size());
-        for(Prodotto c : actual){
-            assertEquals("tostapane",c.getNome());
-        }
+        assertEquals(2,actual.size());
     }
 
 
     private void checkIndirizzoOrdine(List<OrdineInterface> allOrdini) {
         boolean check = false;
         for(OrdineInterface o : allOrdini){
-            System.out.println(o.getDestinazione());
             if(o.getDestinazione().equals("via madonna delle carceri"))check = true;
         }
         assertTrue(check);
@@ -140,8 +135,6 @@ public class DBTest {
     private void checkIDLocker(List<OrdineInterface> allOrdini) {
         int IDLocker = -1;
         for(OrdineInterface o : allOrdini){
-            System.out.println("si");
-            System.out.println(o.getIDLocker());
             if(o.getIDLocker()==2)IDLocker = 1;
         }
         assertEquals(1,IDLocker);
@@ -168,8 +161,6 @@ public class DBTest {
         List<OrdineInterface> r = List.of(new Ordine(2,2,DARITIRARE,5));
         for(OrdineInterface o1 : list){
             for(OrdineInterface o2 : r){
-                System.out.println("IDO1:"+o1.getIDOrdine()+" IDO2:"+o2.getIDOrdine());
-                System.out.println("IDComm1:"+o1.getIDCommerciante()+" IDComm2:"+o2.getIDCommerciante());
                 if(o1.getIDOrdine()==o2.getIDOrdine() && o1.getIDCommerciante()==o2.getIDCommerciante())IDCommCount++;
             }
         }
@@ -183,7 +174,6 @@ public class DBTest {
         int idOrdinecount = 0;
         List<OrdineInterface> r = List.of(new Ordine(1,1,INPREPARAZIONE,2),
                 new Ordine(2,2,DARITIRARE,5));
-        System.out.println(l.size()+" size");
         for(OrdineInterface o1 : l){
             for(OrdineInterface o2 : r)if(o1.getIDOrdine()==o2.getIDOrdine()) idOrdinecount++;
         }

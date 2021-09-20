@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="it.unicam.cs.ids.c3.LockerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-09-18T12:56:36" hostname="PC_FISSO" time="0.095">
+<testsuite name="it.unicam.cs.ids.c3.LockerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-09-20T21:30:40" hostname="PC_FISSO" time="0.048">
   <properties/>
-  <testcase name="testGetOrdineFromArmadietto" classname="it.unicam.cs.ids.c3.LockerTest" time="0.061"/>
-  <testcase name="testConsegnaOrdineACliente" classname="it.unicam.cs.ids.c3.LockerTest" time="0.034"/>
-  <system-out><![CDATA[dentro DBLOCALE ho aggiunto l'id dell'ordine all'armadietto...
-dentro DBLOCALE ho aggiunto l'id dell'ordine all'armadietto...
-]]></system-out>
+  <testcase name="testGetOrdineFromArmadietto" classname="it.unicam.cs.ids.c3.LockerTest" time="0.018"/>
+  <testcase name="testConsegnaOrdineACliente" classname="it.unicam.cs.ids.c3.LockerTest" time="0.03"/>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

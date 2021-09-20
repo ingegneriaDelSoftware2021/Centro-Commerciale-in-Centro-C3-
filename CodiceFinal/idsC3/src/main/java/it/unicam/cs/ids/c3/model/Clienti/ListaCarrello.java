@@ -49,8 +49,7 @@ public class ListaCarrello {
      * @param quantita la quantita del prodotto che si vuole aggiungere.
      */
     public void addToCarrello(int idcarrello, Prodotto prodotto, int quantita){
-        System.out.println(idcarrello + "== id del carrello");
-        if(getCarrello(idcarrello) == null)System.out.println(" il carrrello e' null");
+        if(getCarrello(idcarrello) == null)return;
         this.db.addProdottoToCarrello(idcarrello,prodotto, quantita);
     }
 
@@ -83,6 +82,11 @@ public class ListaCarrello {
         return db.getIDCommFromNegozio(idneg);
     }
 
+    /**
+     * Questo metodo permette di modificare il prezzo del prodotto passato, se &egrave; scontato.
+     * @param prodotto il prodotto da scontare
+     * @return lo sconto in soldi (non in percentuale) del prodotto.
+     */
     public float isSaled(Prodotto prodotto) {
         int idNeg = prodotto.getIDNegozio();
         Promozioni p = this.db.getAllPromozioni(idNeg).stream().filter(x->x.getIDpromozione()== prodotto.getPromozione()).findFirst().orElse(null);

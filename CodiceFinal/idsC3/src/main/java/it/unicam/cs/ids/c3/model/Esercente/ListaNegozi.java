@@ -153,7 +153,11 @@ public class ListaNegozi {
 
     }
 
-
+    /**
+     * Questo metodo mostra tutti i prodotti presenti in un negozio
+     * @param idNegozio id del negozio da analizzare
+     * @return lista di prodotti del negozio
+     */
     public List<Prodotto> getAllProdottiFromNegozio(int idNegozio) {
         return this.db.getAllProdotti().stream().filter(x->x.getIDNegozio()==idNegozio).collect(Collectors.toList());
     }

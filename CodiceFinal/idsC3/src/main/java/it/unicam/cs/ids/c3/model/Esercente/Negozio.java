@@ -163,6 +163,9 @@ public class    Negozio {
         return rit;
     }
 
+    /**
+     * Questo metodo aggiorna la lista dei prodotti (per la quantita')
+     */
     private void updateListaProdotti() {
         this.listaProdotti = ListaNegozi.getInstance().getAllProdottiFromNegozio(this.IDNegozio);
 

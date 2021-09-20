@@ -1,59 +1,29 @@
-it/unicam/cs/ids/c3/model/Esercente/Prodotto.java
- it.unicam.cs.ids.c3.model.Esercente.Prodotto
-it/unicam/cs/ids/c3/model/Clienti/ClienteInterface.java
- it.unicam.cs.ids.c3.model.Clienti.ClienteInterface
-it/unicam/cs/ids/c3/model/Lockers/LockerInterface.java
- it.unicam.cs.ids.c3.model.Lockers.LockerInterface
-it/unicam/cs/ids/c3/model/Vista/cliente/AggiungiCreditoController.java
- it.unicam.cs.ids.c3.model.Vista.cliente.AggiungiCreditoController
-it/unicam/cs/ids/c3/model/Vista/commerciante/AggiungiPromozioneController.java
- it.unicam.cs.ids.c3.model.Vista.commerciante.AggiungiPromozioneController
-it/unicam/cs/ids/c3/model/Ordini/OrdineInterface.java
- it.unicam.cs.ids.c3.model.Ordini.OrdineInterface
-it/unicam/cs/ids/c3/model/Esercente/Promozioni.java
- it.unicam.cs.ids.c3.model.Esercente.Promozioni
-it/unicam/cs/ids/c3/App.java
- it.unicam.cs.ids.c3.App
-it/unicam/cs/ids/c3/model/Ordini/StatoOrdine.java
- it.unicam.cs.ids.c3.model.Ordini.StatoOrdine
-it/unicam/cs/ids/c3/model/Vista/commerciante/VisualizzaNegoziCommController.java
- it.unicam.cs.ids.c3.model.Vista.commerciante.VisualizzaNegoziCommController
-it/unicam/cs/ids/c3/model/Corriere/CorriereInterface.java
- it.unicam.cs.ids.c3.model.Corriere.CorriereInterface
-it/unicam/cs/ids/c3/model/Vista/commerciante/gestisciPromozioniController.java
- it.unicam.cs.ids.c3.model.Vista.commerciante.gestisciPromozioniController
-it/unicam/cs/ids/c3/model/Vista/commerciante/statisticheNegozioController.java
- it.unicam.cs.ids.c3.model.Vista.commerciante.statisticheNegozioController
-it/unicam/cs/ids/c3/model/Vista/cliente/VisualizzaPromozioneController.java
- it.unicam.cs.ids.c3.model.Vista.cliente.VisualizzaPromozioneController
-it/unicam/cs/ids/c3/model/Utente/Utente.java
- it.unicam.cs.ids.c3.model.Utente.Utente
-it/unicam/cs/ids/c3/model/Lockers/Armadietto.java
- it.unicam.cs.ids.c3.model.Lockers.Armadietto
-it/unicam/cs/ids/c3/model/Vista/cliente/OrdiniCheckController.java
- it.unicam.cs.ids.c3.model.Vista.cliente.OrdiniCheckController
-it/unicam/cs/ids/c3/model/Esercente/CommercianteInterface.java
- it.unicam.cs.ids.c3.model.Esercente.CommercianteInterface
-it/unicam/cs/ids/c3/JAVAFXmain.java
- it.unicam.cs.ids.c3.JAVAFXmain
-it/unicam/cs/ids/c3/model/Vista/LoginController.java
- it.unicam.cs.ids.c3.model.Vista.LoginController
 it/unicam/cs/ids/c3/model/Clienti/Carrello.java
  it.unicam.cs.ids.c3.model.Clienti.Carrello
 it/unicam/cs/ids/c3/model/Clienti/ListaCarrello.java
  it.unicam.cs.ids.c3.model.Clienti.ListaCarrello
+it/unicam/cs/ids/c3/model/Lockers/LockerInterface.java
+ it.unicam.cs.ids.c3.model.Lockers.LockerInterface
 it/unicam/cs/ids/c3/model/Esercente/Commerciante.java
  it.unicam.cs.ids.c3.model.Esercente.Commerciante
+it/unicam/cs/ids/c3/model/Vista/commerciante/AggiungiPromozioneController.java
+ it.unicam.cs.ids.c3.model.Vista.commerciante.AggiungiPromozioneController
 it/unicam/cs/ids/c3/model/Ordini/Ordine.java
  it.unicam.cs.ids.c3.model.Ordini.Ordine
 it/unicam/cs/ids/c3/model/database/DBLocale.java
  it.unicam.cs.ids.c3.model.database.DBLocale
 it/unicam/cs/ids/c3/model/Vista/cliente/CercaProdottoController.java
  it.unicam.cs.ids.c3.model.Vista.cliente.CercaProdottoController
+it/unicam/cs/ids/c3/App.java
+ it.unicam.cs.ids.c3.App
 it/unicam/cs/ids/c3/model/Clienti/ListaClienti.java
  it.unicam.cs.ids.c3.model.Clienti.ListaClienti
 it/unicam/cs/ids/c3/model/Vista/locker/vistaLockerController.java
  it.unicam.cs.ids.c3.model.Vista.locker.vistaLockerController
+it/unicam/cs/ids/c3/model/Corriere/CorriereInterface.java
+ it.unicam.cs.ids.c3.model.Corriere.CorriereInterface
+it/unicam/cs/ids/c3/model/Vista/commerciante/gestisciPromozioniController.java
+ it.unicam.cs.ids.c3.model.Vista.commerciante.gestisciPromozioniController
 it/unicam/cs/ids/c3/model/Corriere/ListaCorrieri.java
  it.unicam.cs.ids.c3.model.Corriere.ListaCorrieri
 it/unicam/cs/ids/c3/model/Vista/commerciante/CreaOrdineController.java
@@ -62,24 +32,44 @@ it/unicam/cs/ids/c3/model/Vista/corriere/vistaCorriereController.java
  it.unicam.cs.ids.c3.model.Vista.corriere.vistaCorriereController
 it/unicam/cs/ids/c3/model/Clienti/Cliente.java
  it.unicam.cs.ids.c3.model.Clienti.Cliente
+it/unicam/cs/ids/c3/model/Esercente/CommercianteInterface.java
+ it.unicam.cs.ids.c3.model.Esercente.CommercianteInterface
 it/unicam/cs/ids/c3/model/Vista/cliente/GestisciCarrelloController.java
  it.unicam.cs.ids.c3.model.Vista.cliente.GestisciCarrelloController
 it/unicam/cs/ids/c3/model/Vista/corriere/VisualizzaOrdiniController.java
  it.unicam.cs.ids.c3.model.Vista.corriere.VisualizzaOrdiniController
+it/unicam/cs/ids/c3/model/Clienti/ClienteInterface.java
+ it.unicam.cs.ids.c3.model.Clienti.ClienteInterface
 it/unicam/cs/ids/c3/model/Vista/commerciante/commercianteController.java
  it.unicam.cs.ids.c3.model.Vista.commerciante.commercianteController
+it/unicam/cs/ids/c3/model/Vista/commerciante/VisualizzaNegoziCommController.java
+ it.unicam.cs.ids.c3.model.Vista.commerciante.VisualizzaNegoziCommController
 it/unicam/cs/ids/c3/model/Vista/cliente/ClienteController.java
  it.unicam.cs.ids.c3.model.Vista.cliente.ClienteController
 it/unicam/cs/ids/c3/model/Corriere/Corriere.java
  it.unicam.cs.ids.c3.model.Corriere.Corriere
 it/unicam/cs/ids/c3/model/Lockers/Locker.java
  it.unicam.cs.ids.c3.model.Lockers.Locker
+it/unicam/cs/ids/c3/model/Vista/cliente/VisualizzaPromozioneController.java
+ it.unicam.cs.ids.c3.model.Vista.cliente.VisualizzaPromozioneController
+it/unicam/cs/ids/c3/model/Vista/LoginController.java
+ it.unicam.cs.ids.c3.model.Vista.LoginController
 it/unicam/cs/ids/c3/model/Esercente/ListaNegozi.java
  it.unicam.cs.ids.c3.model.Esercente.ListaNegozi
 it/unicam/cs/ids/c3/model/Vista/locker/RitiraPaccoLocker.java
  it.unicam.cs.ids.c3.model.Vista.locker.RitiraPaccoLocker
+it/unicam/cs/ids/c3/model/Vista/commerciante/statisticheNegozioController.java
+ it.unicam.cs.ids.c3.model.Vista.commerciante.statisticheNegozioController
+it/unicam/cs/ids/c3/model/Ordini/StatoOrdine.java
+ it.unicam.cs.ids.c3.model.Ordini.StatoOrdine
 it/unicam/cs/ids/c3/model/Ordini/ListaOrdini.java
  it.unicam.cs.ids.c3.model.Ordini.ListaOrdini
+it/unicam/cs/ids/c3/JAVAFXmain.java
+ it.unicam.cs.ids.c3.JAVAFXmain
+it/unicam/cs/ids/c3/model/Vista/cliente/OrdiniCheckController.java
+ it.unicam.cs.ids.c3.model.Vista.cliente.OrdiniCheckController
+it/unicam/cs/ids/c3/model/Lockers/Armadietto.java
+ it.unicam.cs.ids.c3.model.Lockers.Armadietto
 it/unicam/cs/ids/c3/model/Autenticazione/GestoreAutenticazione.java
  it.unicam.cs.ids.c3.model.Autenticazione.GestoreAutenticazione
 it/unicam/cs/ids/c3/model/Lockers/ListaLockers.java
@@ -88,5 +78,15 @@ it/unicam/cs/ids/c3/model/Esercente/ListaCommercianti.java
  it.unicam.cs.ids.c3.model.Esercente.ListaCommercianti
 it/unicam/cs/ids/c3/model/Esercente/Negozio.java
  it.unicam.cs.ids.c3.model.Esercente.Negozio
+it/unicam/cs/ids/c3/model/Esercente/Promozioni.java
+ it.unicam.cs.ids.c3.model.Esercente.Promozioni
+it/unicam/cs/ids/c3/model/Ordini/OrdineInterface.java
+ it.unicam.cs.ids.c3.model.Ordini.OrdineInterface
+it/unicam/cs/ids/c3/model/Vista/cliente/AggiungiCreditoController.java
+ it.unicam.cs.ids.c3.model.Vista.cliente.AggiungiCreditoController
 it/unicam/cs/ids/c3/model/Autenticazione/UtenteSenzaAccesso.java
  it.unicam.cs.ids.c3.model.Autenticazione.UtenteSenzaAccesso
+it/unicam/cs/ids/c3/model/Esercente/Prodotto.java
+ it.unicam.cs.ids.c3.model.Esercente.Prodotto
+it/unicam/cs/ids/c3/model/Utente/Utente.java
+ it.unicam.cs.ids.c3.model.Utente.Utente

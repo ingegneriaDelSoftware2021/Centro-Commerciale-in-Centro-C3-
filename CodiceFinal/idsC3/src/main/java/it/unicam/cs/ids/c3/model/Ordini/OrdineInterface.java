@@ -94,7 +94,7 @@ public interface OrdineInterface {
     /**
      * Questo metodo aumenti di una unit&agrave; il contatore che indica quante volte &egrave; stato
      * comprato un determinato prodotto.
-     * @param idordine id dell'ordine in cui stanno i prodotti da aggiornare.
+     * @param idordine id dell'ordine in cui sono presenti i prodotti da aggiornare.
      */
     void updateCounterProdotti(int idordine);
 
@@ -103,6 +103,9 @@ public interface OrdineInterface {
      * @return id del negozio di un ordine.
      */
     int getIDNegozio();
+
+
+
 
 
 }

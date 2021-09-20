@@ -76,8 +76,11 @@ public class ListaClienti {
     }
 
 
-
-
+    /**
+     * Questo metodo aggiunge credito al portafoglio del cliente
+     * @param idCliente id del cliente a cui aggiungere credito
+     * @param newPortafoglio portafoglio aggiornato
+     */
     public void AddCredito(int idCliente, float newPortafoglio) {
         db.addCreditoToCliente(idCliente,newPortafoglio);
     }
